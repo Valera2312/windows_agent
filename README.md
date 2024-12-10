@@ -23,9 +23,9 @@ Windows Monitoring Agent is a lightweight monitoring agent for Windows systems. 
 
 ## Roadmap
 - [ ] Implement metric data transmission via a custom protocol over sockets.
+- [ ] Provide integration with a central monitoring server (active mode), allowing the agent to actively send data to the server. Initially, only passive mode will be implemented.
 - [ ] Add support for additional system metrics (e.g., memory usage, disk I/O).
 - [ ] Introduce configuration options for customizable monitoring.
-- [ ] Provide integration with a central monitoring server.
 
 ## Contributing
 Contributions are welcome! If you'd like to help improve the project:
