@@ -5,8 +5,9 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(windows_agent src/main.cpp
         src/metrics/metrics.cpp
-        src/metrics/metrics.h)
+        src/metrics/metrics.h
+        src/transmission/transmission.cpp
+        src/transmission/transmission.h)
 # Link necessary libraries
-target_link_libraries(windows_agent Pdh)
-
+target_link_libraries(windows_agent Pdh ws2_32)
 

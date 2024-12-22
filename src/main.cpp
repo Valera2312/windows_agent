@@ -1,10 +1,21 @@
 #include <iostream>
 #include <windows.h>
 #include <tchar.h>
-#include "metrics/metrics.h"
 #include <stdio.h>
-#pragma comment(lib, "pdh.lib")
+#include "transmission/transmission.h"
 
+int main() {
+
+    transmissionMain();
+
+     return 0;
+    // SERVICE_TABLE_ENTRY ServiceTable[1];
+    // ServiceTable[0].lpServiceName = _T("Monitoring_Agent");
+    // ServiceTable[0].lpServiceProc = (LPSERVICE_MAIN_FUNCTION)ServiceMain;
+    //
+    // StartServiceCtrlDispatcher(ServiceTable);
+
+}
 
 SERVICE_STATUS ServiceStatus;
 SERVICE_STATUS_HANDLE hStatus;
@@ -14,22 +25,6 @@ void ServiceMain(int argc, char** argv);
 void ControlHandler(DWORD request);
 int InitService();
 
-//Фукции сбора метрик
-double getCPUUsage();
-
-int main() {
-    while (true) {
-        double cpuUsage = getCPUUsage();
-        std::cout << "CPU Usage: " << cpuUsage << "%" << std::endl;
-    }
-    // return 0;
-    // SERVICE_TABLE_ENTRY ServiceTable[1];
-    // ServiceTable[0].lpServiceName = _T("Monitoring_Agent");
-    // ServiceTable[0].lpServiceProc = (LPSERVICE_MAIN_FUNCTION)ServiceMain;
-    //
-    // StartServiceCtrlDispatcher(ServiceTable);
-    return 0;
-}
 void ServiceMain(int argc, char** argv) {
     hStatus = RegisterServiceCtrlHandler(_T("Monitoring_Agent"), (LPHANDLER_FUNCTION)ControlHandler);
 

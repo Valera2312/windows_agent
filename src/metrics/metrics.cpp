@@ -3,6 +3,8 @@
 //
 #include <pdh.h>
 #include <iostream>
+
+#pragma comment(lib, "pdh.lib")
 double getCPUUsage()
 {
     PDH_STATUS status;
