@@ -9,8 +9,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <sstream>
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 #include <thread>
 #include "../metrics/metrics.h"
 

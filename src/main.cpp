@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <tchar.h>
-#include <stdio.h>
+#include <cstdio>
 #include "transmission/transmission.h"
 
 int main() {
